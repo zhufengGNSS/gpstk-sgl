@@ -164,7 +164,7 @@ template <class T> LogLevel Log<T>::FromString(const std::string& level)
 
 // time tag - platform dependent -----------------------------------------
 //#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN32)
 #include <sys/timeb.h>
 template <class T> inline std::string Log<T>::NowTime()
 {
