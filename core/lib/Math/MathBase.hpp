@@ -53,7 +53,7 @@
 namespace gpstk
 {
 // do Doxygen elsewhere
-#ifdef _MSC_VER
+#ifdef _MSC_VER_
 #define ABS(x)  ::abs(x)
 #define SQRT(x) ::sqrt(x)
 #define MAX(x,y) std::max(x,y)
