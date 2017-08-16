@@ -164,7 +164,11 @@ void FileHunter_T :: newDir(const string& path)
       }
    }
    #else
-   if (mkdir(path.c_str(), 0755) != 0)
+      #ifdef __MINGW32__
+            if (mkdir(path.c_str()) != 0)
+      #else
+            if (mkdir(path.c_str(), 0755) != 0)
+      #endif
    {
       if (errno != EEXIST)
       {
