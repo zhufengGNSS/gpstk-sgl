@@ -39,7 +39,7 @@
 
 #include "TimeTag.hpp"
 
-#ifdef _MSC_VER
+#ifdef _MSC_VER_
 #ifndef _WINSOCKAPI_
 #ifndef timeval
 // timeval is defined in winsock.h, which we don't want to include
