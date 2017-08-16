@@ -42,7 +42,7 @@
 #include <math.h>
 #include <stdint.h>
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) && !defined(__MINGW32__)
 static inline double round(double val)
 {    
     return floor(val + 0.5);
