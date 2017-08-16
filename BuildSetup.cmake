@@ -42,11 +42,16 @@ if( WIN32 )
     if( MSVC14 )
         #Compiler Options for Microsoft Visual Studio 14 (2015)
         add_definitions( /MP /D_SCL_SECURE_NO_WARNINGS /D_CRT_SECURE_NO_WARNINGS /D_USE_MATH_DEFINES /EHsc /GR /wd"4274"
-            /wd"4503" /wd"4290" /wd"4267" /wd"4250" /wd"4244" /wd"4101" /wd"4800" /wd"4068" )
+            /wd"4503" /wd"4290" /wd"4267" /wd"4250" /wd"4244" /wd"4101" /wd"4800" /wd"4068" /D_MSC_VER_ )
     elseif( MSVC11 )
         #Compiler Options for Microsoft Visual Studio 11 (2012)
         add_definitions( /MP /D_SCL_SECURE_NO_WARNINGS /D_CRT_SECURE_NO_WARNINGS /D_USE_MATH_DEFINES /EHsc /GR /wd"4274"
-            /wd"4503" /wd"4290" /wd"4267" /wd"4250" /wd"4244" /wd"4101" /wd"4800" /wd"4068" )
+            /wd"4503" /wd"4290" /wd"4267" /wd"4250" /wd"4244" /wd"4101" /wd"4800" /wd"4068" /D_MSC_VER_ )
+	elseif(MINGW)
+		add_compile_options(-D_MSC_VER=1900)		  
+		# unset(_MSC_VER)
+		add_compile_options(-std=c++11 -D_USE_MATH_DEFINES)
+		message(STATUS "optional:-std=c++11")            
     endif( MSVC14 )
 endif()
 
