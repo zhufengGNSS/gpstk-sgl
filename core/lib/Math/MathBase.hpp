@@ -53,6 +53,7 @@
 namespace gpstk
 {
 // do Doxygen elsewhere
+// for mingw g++ build tool.
 #ifdef _MSC_VER_
 #define ABS(x)  ::abs(x)
 #define SQRT(x) ::sqrt(x)
