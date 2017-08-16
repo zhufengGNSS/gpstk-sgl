@@ -264,7 +264,7 @@ testStream(const std::string& outfn, const std::string& reffn,
    
    StreamType testStrmIn(outfn.c_str(), ios::in);
 
-   #ifdef WIN32
+   #if defined(WIN32) || defined(__MINGW32__)
    testFramework.assert(bool(testStrmIn), "Couldn't open " + outfn + " for input", __LINE__);
    #else
    testFramework.assert(testStrmIn, "Couldn't open " + outfn + " for input", __LINE__);
